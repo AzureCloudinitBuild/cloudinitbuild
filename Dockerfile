@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 # Install.
 RUN \
   apt-get update && \
-  apt-get install -y build-essential && \
+  apt-get install -y build-essential uuid-runtime && \
   apt-get install -y software-properties-common && \
   apt-get install -y byobu curl git htop man unzip vim wget sudo apt-transport-https lsb-release gnupg && \
   apt-get install -y devscripts && \
