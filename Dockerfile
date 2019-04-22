@@ -15,6 +15,9 @@ RUN echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb
 
 RUN apt-get update && \
     apt-get install azure-cli
+    
+RUN wget https://aka.ms/downloadazcopy-v10-linux -O /tmp/azcopy.tar.gz && \
+    tar xvfz /tmp/azcopy.tar.gz --directory /usr/bin --wildcards "*/azcopy" --strip-components=1
 
 # Define default command.
 CMD ["bash"]
